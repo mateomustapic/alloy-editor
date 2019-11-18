@@ -318,6 +318,7 @@ if (!CKEDITOR.plugins.get('ae_dragresize_ie')) {
 					'data-cke-saved-src': this.data.src,
 
 					src: this.data.src,
+					title: this.data.alt
 				});
 
 				// If shifting non-captioned -> captioned, remove classes

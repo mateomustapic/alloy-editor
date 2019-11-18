@@ -381,6 +381,7 @@
 					'data-cke-saved-src': this.data.src,
 
 					alt: this.data.alt,
+					title: this.data.alt
 				});
 
 				// If shifting non-captioned -> captioned, remove classes
