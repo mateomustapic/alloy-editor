@@ -33,7 +33,7 @@ class ButtonAccessibilityImageAlt extends React.Component {
 
 		this.state = {
 			element,
-			imageAlt,
+			imageAlt
 		};
 	}
 
@@ -110,14 +110,14 @@ class ButtonAccessibilityImageAlt extends React.Component {
 	 */
 	_handleAltChange = event => {
 		this.setState({
-			imageAlt: event.target.value,
+			imageAlt: event.target.value
 		});
 
 		this._focusAltInput();
 	};
 
 	/**
-	 * Event attached to al tinput that fires when key is down
+	 * Event attached to alt input that fires when key is down
 	 * This method check that enter key is pushed to update the component´s state
 	 *
 	 * @protected
@@ -155,7 +155,7 @@ class ButtonAccessibilityImageAlt extends React.Component {
 		const imageAlt = this.refs.refAltInput.value;
 
 		this.setState({
-			imageAlt,
+			imageAlt
 		});
 
 		this.state.element.setAttribute('alt', imageAlt);
