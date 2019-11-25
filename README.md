@@ -22,6 +22,44 @@ Works on IE9+, Chrome, Firefox and Safari.
 -   The example UI is built with React
 -   Plugin architecture
 
+## Setup AlloyEditor in [liferay-portal](https://github.com/liferay/liferay-portal)
+
+Update AlloyEditor:
+
+1. Install global dependencies: `npm install`
+2. Make local changes
+3. Build a new release of AlloyEditor: `yarn build`
+4. Link new release: `yarn link`
+
+Update AlloyEditor in liferay-portal:
+
+1. Navigate to the [frontend-editor-alloyeditor-web](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-editor/frontend-editor-alloyeditor-web) module
+2. Link latest alloyeditor: `yarn link alloyeditor`
+3. Run `yarn add $PATH_TO_YOUR_LOCAL_ALLOY_EDITOR_REPO`
+4. Remove the build, and classes directories `rm -rf build classes node_modules`
+5. Deploy the module: `gradlew deploy`.
+
+## Developing AlloyEditor in [liferay-portal](https://github.com/liferay/liferay-portal)
+
+After Setup update AlloyEditor
+
+1. Make local changes
+2. Build a new release of AlloyEditor: `yarn build`
+
+Update AlloyEditor in liferay-portal:
+
+1. Re-deploy the [frontend-editor-alloyeditor-web](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-editor/frontend-editor-alloyeditor-web) module: `gradlew deploy`
+
+## Updating AlloyEditor version in [liferay-portal](https://github.com/liferay/liferay-portal)
+
+To update AlloyEditor version in liferay-portal:
+
+1. Navigate to the [frontend-editor-alloyeditor-web](https://github.com/liferay/liferay-portal/tree/master/modules/apps/frontend-editor/frontend-editor-alloyeditor-web) module
+2. Update the `alloyeditor` dependency in the `package.json` file
+3. Re-deploy the module with `gradlew clean deploy`.
+
+An example can be seen in [this](https://github.com/liferay/alloy-editor/commit/0525c86b6d09c85b720ceaf52807f7a96feaeb2b#diff-b9cfc7f2cdf78a7f4b91a753d10865a2) commit ([`package.json`](https://github.com/liferay/alloy-editor/blob/0525c86b6d09c85b720ceaf52807f7a96feaeb2b/package.json) file)
+
 ## Documentation
 
 Look for documentation and examples on [http://alloyeditor.com/](http://alloyeditor.com/)
